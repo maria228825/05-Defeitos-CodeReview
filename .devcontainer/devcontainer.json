@@ -1,0 +1,23 @@
+{
+  "name": "Defeitos & Revisões",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "yzhang.markdown-all-in-one",
+        "SonarSource.sonarlint-vscode"
+      ],
+      "settings": {
+        "editor.formatOnSave": false,
+        "files.trimTrailingWhitespace": true
+      }
+    }
+  }
+}

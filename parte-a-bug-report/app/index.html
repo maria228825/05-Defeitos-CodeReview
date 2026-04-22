@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TarefaQS — Sua lista de tarefas acadêmicas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>TarefaQS</h1>
+      <p class="tagline">Sua lista de tarefas acadêmicas · v1.0.0</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Nova tarefa</h2>
+      <form id="form-tarefa" autocomplete="off">
+        <div class="form-row">
+          <label for="titulo">Título</label>
+          <input type="text" id="titulo" name="titulo" placeholder="Ex.: Estudar para prova de QS">
+        </div>
+
+        <div class="form-row form-row-grid">
+          <div>
+            <label for="categoria">Categoria</label>
+            <select id="categoria" name="categoria">
+              <option value="estudo">Estudo</option>
+              <option value="trabalho">Trabalho</option>
+              <option value="pessoal">Pessoal</option>
+            </select>
+          </div>
+          <div>
+            <label for="prazo">Prazo</label>
+            <input type="date" id="prazo" name="prazo">
+          </div>
+          <div>
+            <label for="prioridade">Prioridade (1-5)</label>
+            <input type="number" id="prioridade" name="prioridade" step="any" value="3">
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" id="btn-adicionar" class="btn btn-primary">Adicionar tarefa</button>
+          <button type="button" id="btn-limpar" class="btn btn-ghost">Limpar campos</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card stats-card">
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-value" id="stat-total">0</span>
+          <span class="stat-label">Total</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" id="stat-pendentes">0</span>
+          <span class="stat-label">Pendentes</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" id="stat-concluidas">0</span>
+          <span class="stat-label">Concluídas</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="filters">
+        <label for="filtro">Filtrar:</label>
+        <select id="filtro">
+          <option value="todas">Todas</option>
+          <option value="pendentes">Apenas pendentes</option>
+          <option value="concluidas">Apenas concluídas</option>
+        </select>
+        <button type="button" id="btn-limpar-tudo" class="btn btn-danger">Limpar tudo</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Suas tarefas</h2>
+      <ul id="lista-tarefas" class="lista-tarefas">
+        <li class="empty-state">Nenhuma tarefa ainda. Adicione a primeira acima.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>TarefaQS · Aplicação didática com defeitos injetados</p>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
