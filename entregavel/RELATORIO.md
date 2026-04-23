@@ -10,10 +10,10 @@
 
 | Nome completo | RA | GitHub |
 |---|---|---|
-| [Nome 1] | [000000] | [@usuario1] |
-| [Nome 2] | [000000] | [@usuario2] |
+| [Mauro Raya Franco] | [232009] | [@MauroRaya] |
+| [Maria Clara Arci] | [228825] | [@maria228225] |
 
-**Ambiente de testes:** [Descreva brevemente o setup — ex: Chrome 121 no Windows 11, GitHub Pages do fork, editor web do GitHub]
+**Ambiente de testes:** [Chrome 121 no Windows 11, GitHub Pages do fork, editor web do GitHub]
 
 ---
 
@@ -28,32 +28,290 @@
 
 ## Parte A — Bug Reports
 
-> **Substitua este bloco de citação pelo conteúdo copiado integralmente do seu arquivo `parte-a-bug-report/template-bug-report.md`.**
-> Preservando todos os campos, incluindo a Matriz de Prioridade x Severidade, Passos para Reprodução e Evidências.
-> Mínimo: 3 defeitos.
+## BUG-001
+
+**Título:** [CONTEXTO] Prioridade de tarefa com valor fora do esperado (1-5)
+
+**Severidade:** Média  
+**Justificativa da severidade:** Não é algo crítico que impacta diretamente o sistema como um todo, porém é uma inconveniência frequente e negativa para o usuário.
+
+**Prioridade:** P2  
+**Justificativa da prioridade:** Não é a maior prioridade no momento, mas impacta diretamente a experiência do usuário.
+
+**Ambiente:**
+- Navegador: [Chrome 121.0]
+- Sistema Operacional: [Windows 11]
+- Versão da aplicação: TarefaQS v1.0.0
+
+**Passos para reprodução:**
+1. Abra o site no caminho: `https://maria228825.github.io/05-Defeitos-CodeReview/parte-a-bug-report/app/index.html`.
+2. No campo de prioridade da tarefa, digite um valor fora do esperado (1 < valor > 5).
+3. Clique no botão de adicionar a tarefa.
+
+**Resultado esperado:**
+Uma mensagem de erro e não permitir a criação da tarefa.
+
+**Resultado obtido:**
+Tarefa criada com sucesso.
+
+**Evidência:**
+![Descrição da evidência](evidencias/bug-001-captura.png)
+
+**Sugestão de causa raiz (opcional):**
+Adicionar um operador lógico (if, else) para capturar valores fora do esperado durante criação de uma tarefa.
+
+---
+
+## BUG-002
+
+**Título:** [CONTEXTO] Criação de uma tarefa sem dados preenchidos
+
+**Severidade:** Média  
+**Justificativa da severidade:** Não é algo crítico que impacta diretamente o sistema como um todo, porém é uma inconveniência frequente e negativa para o usuário.
+
+**Prioridade:** P2  
+**Justificativa da prioridade:** Não é a maior prioridade no momento, mas impacta diretamente a experiência do usuário.
+
+**Ambiente:**
+- Navegador: [Chrome 121.0]
+- Sistema Operacional: [Windows 11]
+- Versão da aplicação: TarefaQS v1.0.0
+
+**Passos para reprodução:**
+1. Abra o site no caminho: `https://maria228825.github.io/05-Defeitos-CodeReview/parte-a-bug-report/app/index.html`.
+2. Não preencha os campos.
+3. Clique no botão de adicionar a tarefa.
+
+**Resultado esperado:**
+Uma mensagem de erro e não permitir a criação da tarefa.
+
+**Resultado obtido:**
+Tarefa criada com sucesso.
+
+**Evidência:**
+![Descrição da evidência](evidencias/bug-002-captura.png)
+
+**Sugestão de causa raiz (opcional):**
+Adicionar um operador lógico (if, else) para capturar os valores dos campos durante criação de uma tarefa.
+
+---
+
+## BUG-003
+
+**Título:** [CONTEXTO] Tarefas não persistem após recarregar a página
+
+**Severidade:** Crítica  
+**Justificativa da severidade:** Impacta diretamente o sistema, resultando na perda dos registros das tarefas.
+
+**Prioridade:** P4  
+**Justificativa da prioridade:** Precisa ser tratado assim que possivel, já que impacta diretamente o usuário resultando em perda de dados.
+
+**Ambiente:**
+- Navegador: [Chrome 121.0]
+- Sistema Operacional: [Windows 11]
+- Versão da aplicação: TarefaQS v1.0.0
+
+**Passos para reprodução:**
+1. Abra o site no caminho: `https://maria228825.github.io/05-Defeitos-CodeReview/parte-a-bug-report/app/index.html`.
+2. Preencha os dados de uma tarefa.
+3. Clique no botão para criar uma tarefa.
+4. Recarregue a página.
+
+**Resultado esperado:**
+As tarefas deveriam persistir e aparecer corretamente na tela.
+
+**Resultado obtido:**
+As tarefas foram perdidas.
+
+**Sugestão de causa raiz (opcional):**
+Registrar as tarefas em um banco de dados.
+
+---
+
+## ✅ Critérios de qualidade do bug report
+*(Use para conferir antes de entregar)*
+
+- [X] Título descritivo — outra pessoa entende o problema só pelo título?
+- [X] Passos são **numerados** e **reproduzíveis** por terceiros?
+- [X] Há **pelo menos uma evidência** (screenshot, GIF ou log)?
+- [X] Severidade tem **justificativa explícita**?
+- [X] Prioridade tem **justificativa explícita**?
+- [X] Ambiente inclui **navegador + SO**?
+- [X] "Esperado vs. Obtido" deixa o gap claro?
+
+## ✅ Checklist de qualidade dos reports
+
+Antes de submeter, confirme em cada report:
+
+- [X] Título é específico e acionável (não `"Não funciona"`).
+- [X] Passos estão **numerados** e são reproduzíveis por terceiros.
+- [X] Há **pelo menos uma evidência** por report (imagem, GIF ou log).
+- [X] Severidade tem **justificativa explícita**.
+- [X] Prioridade tem **justificativa explícita**.
+- [X] Ambiente inclui **navegador + SO**.
+- [X] "Esperado × Obtido" deixa a diferença clara.
+- [X] Os 3 defeitos reportados cobrem **categorias diferentes**
+      (funcional, UX, validação, persistência, etc.)
 
 ---
 
 ## Parte B — Code Review
 
-> **Substitua este bloco de citação pelo conteúdo copiado integralmente do seu arquivo `parte-b-code-review/formulario-code-review.md`.**
-> Preservando os rótulos, linhas e sugestões de correção.
-> Mínimo: 6 findings.
+### Finding #1
 
-### Resumo
+**📍 Linha(s):** 11–13
+**🏷 Rótulo:** blocker
+**📂 Dimensão:** Segurança
+**⚠️ Severidade:** Crítica
 
-| # | Linha | Dimensão | Rótulo | Severidade |
-|---|-------|----------|--------|------------|
-| 1 |       |          |        |            |
-| 2 |       |          |        |            |
-| 3 |       |          |        |            |
-| 4 |       |          |        |            |
-| 5 |       |          |        |            |
-| 6 |       |          |        |            |
+**🐛 Problema:**
+A query é construída por concatenação de string, permitindo **SQL Injection** caso o parâmetro `nome` seja malicioso.
 
-### Findings detalhadas
+**💡 Sugestão de correção:**
+Utilizar queries parametrizadas para evitar injeção.
 
-> Cole integralmente aqui suas findings copiadas do formulário.
+```javascript
+async function buscarUsuarioPorNome(nome) {
+  const query = "SELECT * FROM usuarios WHERE nome = ?";
+  return db.executarQuery(query, [nome]);
+}
+```
+
+**📚 Referência (opcional):** OWASP - SQL Injection
+
+---
+
+### Finding #2
+
+**📍 Linha(s):** 16–28
+**🏷 Rótulo:** major
+**📂 Dimensão:** Erros
+**⚠️ Severidade:** Alta
+
+**🐛 Problema:**
+Não há validação dos dados de entrada (`dados.nome`, `dados.email`, `dados.tipo`, `dados.senha`). Isso pode causar inconsistência ou falhas.
+
+**💡 Sugestão de correção:**
+Adicionar validações antes do processamento.
+
+```javascript
+if (!dados.nome || !dados.email || !dados.senha) {
+  throw new Error('Dados obrigatórios não informados');
+}
+
+if (!TIPOS_VALIDOS.includes(dados.tipo)) {
+  throw new Error('Tipo de usuário inválido');
+}
+```
+
+---
+
+### Finding #3
+
+**📍 Linha(s):** 30–36
+**🏷 Rótulo:** major
+**📂 Dimensão:** Erros
+**⚠️ Severidade:** Alta
+
+**🐛 Problema:**
+A função `atualizarEmail` não verifica se o usuário existe antes de atualizar (`u` pode ser `null` ou `undefined`).
+
+**💡 Sugestão de correção:**
+
+```javascript
+async function atualizarEmail(id, novoEmail) {
+  const u = await db.buscarPorId('usuarios', id);
+
+  if (!u) {
+    throw new Error('Usuário não encontrado');
+  }
+
+  u.email = novoEmail;
+  await db.atualizar('usuarios', id, u);
+  logger.info('Email atualizado: ' + novoEmail);
+  return u;
+}
+```
+
+---
+
+### Finding #4
+
+**📍 Linha(s):** 38–102
+**🏷 Rótulo:** major
+**📂 Dimensão:** Complexidade
+**⚠️ Severidade:** Alta
+
+**🐛 Problema:**
+A função `calcularLimiteEmprestimo` possui alta complexidade ciclomática com muitos `if/else` aninhados, dificultando manutenção e testes.
+
+**💡 Sugestão de correção:**
+Refatorar usando funções auxiliares ou estratégia baseada em regras.
+
+```javascript
+function calcularLimiteProfessor(usuario) {
+  if (usuario.tempoCasaEmDias > 365) {
+    if (usuario.atrasos === 0) return 20;
+    if (usuario.atrasos < 3) return 15;
+    return usuario.multaPendente ? 1 : 3;
+  }
+
+  if (usuario.atrasos === 0) return 10;
+  if (usuario.atrasos < 3) return 7;
+  return usuario.suspenso ? 0 : 2;
+}
+```
+
+---
+
+### Finding #5
+
+**📍 Linha(s):** 18
+**🏷 Rótulo:** nit
+**📂 Dimensão:** Padrões
+**⚠️ Severidade:** Baixa
+
+**🐛 Problema:**
+Uso de `salt = 10` como valor fixo pode não ser ideal dependendo da política de segurança.
+
+**💡 Sugestão de correção:**
+Extrair para variável de ambiente.
+
+```javascript
+const salt = process.env.SALT_ROUNDS || 10;
+```
+
+---
+
+### Finding #6
+
+**📍 Linha(s):** 103–140
+**🏷 Rótulo:** major
+**📂 Dimensão:** Complexidade
+**⚠️ Severidade:** Média
+
+**🐛 Problema:**
+Existe duplicação de lógica entre `calcularLimiteEmprestimo` e `calcularLimiteComSuspensao`, aumentando risco de inconsistência.
+
+**💡 Sugestão de correção:**
+Reutilizar a função principal e aplicar regra de suspensão separadamente.
+
+```javascript
+function calcularLimiteComSuspensao(usuario) {
+  if (usuario.suspenso) return 0;
+  return calcularLimiteEmprestimo(usuario);
+}
+```
+
+---
+
+## ✅ Checklist final
+
+* [x] Há pelo menos 6 findings preenchidas
+* [x] Cada finding cita linha, dimensão, rótulo e severidade
+* [x] As sugestões são concretas e acionáveis
+* [x] Pelo menos uma finding cobre segurança
+* [x] Pelo menos uma finding cobre complexidade
 
 ---
 
@@ -63,11 +321,11 @@
 
 **Qual dimensão do checklist foi mais difícil aplicar? Por quê?**
 
-[Escrevam aqui.]
+A dimensão mais difícil foi **Complexidade**, pois exige analisar a lógica como um todo e não apenas erros pontuais. Funções com muitos `if/else` tornam essa avaliação mais subjetiva e trabalhosa.
 
 **O que vocês fariam diferente se revisassem o código novamente?**
 
-[Escrevam aqui.]
+Se revisássemos novamente, focaríamos mais em refatoração e padronização desde o início. Também buscaríamos soluções mais organizadas para reduzir repetição e facilitar manutenção futura.
 
 ---
 
@@ -78,7 +336,7 @@
 
 - [ ] Não usamos IA nesta atividade.
 - [ ] Usamos IA para esclarecer conceitos teóricos.
-- [ ] Usamos IA para revisar a redação dos bug reports.
+- [X] Usamos IA para revisar a redação dos bug reports.
 - [ ] Usamos IA para discutir se um achado era ou não um defeito.
 - [ ] Uso específico: [descreva]
 

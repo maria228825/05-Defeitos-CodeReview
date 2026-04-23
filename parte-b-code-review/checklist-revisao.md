@@ -5,7 +5,7 @@ Use este arquivo como roteiro durante a leitura de
 
 ## 📘 Dimensão 1 — Legibilidade
 
-- [ ] Os nomes de variáveis, funções e parâmetros são descritivos?
+- [X] Os nomes de variáveis, funções e parâmetros são descritivos?
 - [ ] Funções têm tamanho razoável?
 - [ ] O fluxo do código é fácil de seguir?
 - [ ] Há comentários onde realmente ajudariam?
@@ -26,16 +26,16 @@ Use este arquivo como roteiro durante a leitura de
 
 ## 🧮 Dimensão 4 — Complexidade
 
-- [ ] Há função com complexidade ciclomática alta?
-- [ ] Há trechos que pedem extração de função?
-- [ ] Há código duplicado que viola DRY?
-- [ ] Condicionais podem ser simplificados?
+- [X] Há função com complexidade ciclomática alta?
+- [X] Há trechos que pedem extração de função?
+- [X] Há código duplicado que viola DRY?
+- [X] Condicionais podem ser simplificados?
 
 ## 📐 Dimensão 5 — Padrões
 
-- [ ] O código segue convenções de nomenclatura do JavaScript (ex: `camelCase`)?
-- [ ] Usa `const` e `let` de forma adequada, evitando `var`?
-- [ ] Existem regras ou estruturas excessivamente confusas e fora de padrão?
+- [X] O código segue convenções de nomenclatura do JavaScript (ex: `camelCase`)?
+- [X] Usa `const` e `let` de forma adequada, evitando `var`?
+- [X] Existem regras ou estruturas excessivamente confusas e fora de padrão?
 
 ## 🎯 Rótulos de finding
 

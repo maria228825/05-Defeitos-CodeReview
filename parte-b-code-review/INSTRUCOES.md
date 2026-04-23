@@ -50,12 +50,12 @@ Para cada problema encontrado, preencha uma entrada no arquivo
 
 ## Critérios de qualidade
 
-- [ ] Cobri **todas as 5 dimensões** do checklist?
-- [ ] Identifiquei **pelo menos os 6 problemas intencionais**?
-- [ ] Cada finding cita a **linha exata**?
-- [ ] Cada finding tem **severidade** e **rótulo**?
-- [ ] As sugestões de correção são concretas?
-- [ ] Os comentários são construtivos?
+- [X] Cobri **todas as 5 dimensões** do checklist?
+- [X] Identifiquei **pelo menos os 6 problemas intencionais**?
+- [X] Cada finding cita a **linha exata**?
+- [X] Cada finding tem **severidade** e **rótulo**?
+- [X] As sugestões de correção são concretas?
+- [X] Os comentários são construtivos?
 
 ## Entrega
 

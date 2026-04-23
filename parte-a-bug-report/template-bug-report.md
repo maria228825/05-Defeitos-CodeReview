@@ -3,135 +3,134 @@
 > Preencha uma seção completa para cada defeito encontrado. O mínimo
 > exigido é **3 bug reports**. Apague este bloco antes de entregar.
 
-**Dupla:** [Nome 1 + RA] + [Nome 2 + RA]
-**Data da exploração:** [DD/MM/AAAA]
-**Navegador usado:** [Chrome 121 / Firefox 122 / Safari 17 / …]
-**Sistema operacional:** [Windows 11 / macOS 14 / Ubuntu 22.04 / …]
+**Dupla:** [Mauro Raya Franco 232009] + [Maria Clara Arci 228825]  
+**Data da exploração:** [22/04/2026]  
+**Navegador usado:** [Chrome 121]  
+**Sistema operacional:** [Windows 11]  
 
 ---
 
 ## BUG-001
 
-**Título:** [CONTEXTO] Descrição específica e acionável do problema
+**Título:** [CONTEXTO] Prioridade de tarefa com valor fora do esperado (1-5)
 
-**Severidade:** Crítica | Alta | Média | Baixa
-**Justificativa da severidade:** (1-2 frases explicando o impacto técnico)
+**Severidade:** Média  
+**Justificativa da severidade:** Não é algo crítico que impacta diretamente o sistema como um todo, porém é uma inconveniência frequente e negativa para o usuário.
 
-**Prioridade:** P1 | P2 | P3 | P4
-**Justificativa da prioridade:** (1-2 frases explicando a urgência de negócio)
+**Prioridade:** P2  
+**Justificativa da prioridade:** Não é a maior prioridade no momento, mas impacta diretamente a experiência do usuário.
 
 **Ambiente:**
-- Navegador: [ex.: Chrome 121.0]
-- Sistema Operacional: [ex.: Windows 11]
+- Navegador: [Chrome 121.0]
+- Sistema Operacional: [Windows 11]
 - Versão da aplicação: TarefaQS v1.0.0
 
 **Passos para reprodução:**
-1. Passo numerado e objetivo
-2. Outro passo claro o suficiente para qualquer pessoa reproduzir
-3. ...
+1. Abra o site no caminho: `https://maria228825.github.io/05-Defeitos-CodeReview/parte-a-bug-report/app/index.html`.
+2. No campo de prioridade da tarefa, digite um valor fora do esperado (1 < valor > 5).
+3. Clique no botão de adicionar a tarefa.
 
 **Resultado esperado:**
-[O que deveria acontecer segundo o comportamento desejado.]
+Uma mensagem de erro e não permitir a criação da tarefa.
 
 **Resultado obtido:**
-[O que efetivamente acontece.]
+Tarefa criada com sucesso.
 
 **Evidência:**
 ![Descrição da evidência](evidencias/bug-001-captura.png)
 
-> Se preferir anexar um GIF ou arquivo de log, crie uma pasta
-> `evidencias/` ao lado deste arquivo e referencie o arquivo aqui.
-
 **Sugestão de causa raiz (opcional):**
-[Palpite informado — útil para quem vai corrigir.]
+Adicionar um operador lógico (if, else) para capturar valores fora do esperado durante criação de uma tarefa.
 
 ---
 
 ## BUG-002
 
-**Título:**
+**Título:** [CONTEXTO] Criação de uma tarefa sem dados preenchidos
 
-**Severidade:**
-**Justificativa da severidade:**
+**Severidade:** Média  
+**Justificativa da severidade:** Não é algo crítico que impacta diretamente o sistema como um todo, porém é uma inconveniência frequente e negativa para o usuário.
 
-**Prioridade:**
-**Justificativa da prioridade:**
+**Prioridade:** P2  
+**Justificativa da prioridade:** Não é a maior prioridade no momento, mas impacta diretamente a experiência do usuário.
 
 **Ambiente:**
-- Navegador:
-- Sistema Operacional:
+- Navegador: [Chrome 121.0]
+- Sistema Operacional: [Windows 11]
 - Versão da aplicação: TarefaQS v1.0.0
 
 **Passos para reprodução:**
-1.
-2.
-3.
+1. Abra o site no caminho: `https://maria228825.github.io/05-Defeitos-CodeReview/parte-a-bug-report/app/index.html`.
+2. Não preencha os campos.
+3. Clique no botão de adicionar a tarefa.
 
 **Resultado esperado:**
+Uma mensagem de erro e não permitir a criação da tarefa.
 
 **Resultado obtido:**
+Tarefa criada com sucesso.
 
 **Evidência:**
+![Descrição da evidência](evidencias/bug-002-captura.png)
 
 **Sugestão de causa raiz (opcional):**
+Adicionar um operador lógico (if, else) para capturar os valores dos campos durante criação de uma tarefa.
 
 ---
 
 ## BUG-003
 
-**Título:**
+**Título:** [CONTEXTO] Tarefas não persistem após recarregar a página
 
-**Severidade:**
-**Justificativa da severidade:**
+**Severidade:** Crítica  
+**Justificativa da severidade:** Impacta diretamente o sistema, resultando na perda dos registros das tarefas.
 
-**Prioridade:**
-**Justificativa da prioridade:**
+**Prioridade:** P4  
+**Justificativa da prioridade:** Precisa ser tratado assim que possivel, já que impacta diretamente o usuário resultando em perda de dados.
 
 **Ambiente:**
-- Navegador:
-- Sistema Operacional:
+- Navegador: [Chrome 121.0]
+- Sistema Operacional: [Windows 11]
 - Versão da aplicação: TarefaQS v1.0.0
 
 **Passos para reprodução:**
-1.
-2.
-3.
+1. Abra o site no caminho: `https://maria228825.github.io/05-Defeitos-CodeReview/parte-a-bug-report/app/index.html`.
+2. Preencha os dados de uma tarefa.
+3. Clique no botão para criar uma tarefa.
+4. Recarregue a página.
 
 **Resultado esperado:**
+As tarefas deveriam persistir e aparecer corretamente na tela.
 
 **Resultado obtido:**
-
-**Evidência:**
+As tarefas foram perdidas.
 
 **Sugestão de causa raiz (opcional):**
-
----
-
-<!-- Para reports adicionais, copie o bloco acima trocando o número. -->
+Registrar as tarefas em um banco de dados.
 
 ---
 
 ## ✅ Critérios de qualidade do bug report
 *(Use para conferir antes de entregar)*
 
-- [ ] Título descritivo — outra pessoa entende o problema só pelo título?
-- [ ] Passos são **numerados** e **reproduzíveis** por terceiros?
-- [ ] Há **pelo menos uma evidência** (screenshot, GIF ou log)?
-- [ ] Severidade tem **justificativa explícita**?
-- [ ] Prioridade tem **justificativa explícita**?
-- [ ] Ambiente inclui **navegador + SO**?
-- [ ] "Esperado vs. Obtido" deixa o gap claro?
+- [X] Título descritivo — outra pessoa entende o problema só pelo título?
+- [X] Passos são **numerados** e **reproduzíveis** por terceiros?
+- [X] Há **pelo menos uma evidência** (screenshot, GIF ou log)?
+- [X] Severidade tem **justificativa explícita**?
+- [X] Prioridade tem **justificativa explícita**?
+- [X] Ambiente inclui **navegador + SO**?
+- [X] "Esperado vs. Obtido" deixa o gap claro?
 
 ## ✅ Checklist de qualidade dos reports
 
 Antes de submeter, confirme em cada report:
 
-- [ ] Título é específico e acionável (não `"Não funciona"`).
-- [ ] Passos estão **numerados** e são reproduzíveis por terceiros.
-- [ ] Há **pelo menos uma evidência** por report (imagem, GIF ou log).
-- [ ] Severidade tem **justificativa explícita**.
-- [ ] Prioridade tem **justificativa explícita**.
-- [ ] Ambiente inclui **navegador + SO**.
-- [ ] "Esperado × Obtido" deixa a diferença clara.
-- [ ] Os 3 defeitos reportados cobrem **categorias diferentes**
+- [X] Título é específico e acionável (não `"Não funciona"`).
+- [X] Passos estão **numerados** e são reproduzíveis por terceiros.
+- [X] Há **pelo menos uma evidência** por report (imagem, GIF ou log).
+- [X] Severidade tem **justificativa explícita**.
+- [X] Prioridade tem **justificativa explícita**.
+- [X] Ambiente inclui **navegador + SO**.
+- [X] "Esperado × Obtido" deixa a diferença clara.
+- [X] Os 3 defeitos reportados cobrem **categorias diferentes**
       (funcional, UX, validação, persistência, etc.)
